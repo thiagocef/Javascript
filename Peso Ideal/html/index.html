@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peso Ideal</title>
+
+    <link rel="stylesheet" href="../style/styles.css">
+
+</head>
+<body>
+    <main>
+        <h1>Peso Ideal</h1>
+
+        <h3>Nome: <input type="text" id="inNome"></h3>
+
+        <h3 id="sexo">
+            Sexo:
+            Masculino <input type="radio" name="sexo" id="inMasculino">
+            Feminino <input type="radio" name="sexo" id="inFeminino">
+        </h3>
+
+        <h3>Altura: <input type="text" id="inAltura"></h3>
+
+        <div id="botao">
+            <p><input type="button" value="Calcular Peso" id="btResultado"></p>
+            <p><input type="button" value="Limpar Campos" id="btLimpar"></p>
+        </div>
+
+        <h2 id="outPeso"></h2>
+
+        <script src="../js/script.js"></script>
+    </main>
+</body>
+</html>

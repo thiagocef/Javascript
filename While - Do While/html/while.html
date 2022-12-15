@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While</title>
+</head>
+<body>
+    <h1>While - TESTE NO INÍCIO</h1>
+    <h2>Nesta condição, pode ser que os comando <br> não sejam executados NENHUMA VEZ</h2>
+
+    <p>Numero: <input type="text" id="inNumero"></p>
+    <input type="button" value="Mostrar" id="btMostrar">
+    <p id="outResultado"></p>
+<!-- ================================================================== -->
+    <script>
+        function mostar() {
+            var inNumero = document.getElementById("inNumero")
+            var outResultado = document.getElementById("outResultado")
+
+            var numero = Number(inNumero.value)
+            var resposta = ""
+            while (numero >= 0) {
+                resposta += `${numero}, `
+                numero--
+            }
+
+            outResultado.textContent = `${resposta}`
+        }
+
+            var btMostrar = document.getElementById("btMostrar")
+            btMostrar.addEventListener("click", mostar)
+       
+    </script>
+
+
+</body>
+</html>

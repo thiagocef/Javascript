@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Break - Contiue</title>
+</head>
+<body>
+    <h1>Break - Contiue</h1>
+    <h2>Estes dois comando poder ser usados nas estruturas de repetição: FOR, WHILE, DO... WHILE</h2>
+
+    <h3>Break</h3>
+    <p>Sai do Laço de Repetição</p>
+
+    <h3>Continue</h3>
+    <p>Retorna ao Início do Laço</p>
+    <hr>
+<!-- ================================================= -->
+    <script>
+        alert("Digite um número ou 0 pra sair")
+
+        do {
+
+            var num = Number(prompt("Numero: "))
+
+            if (num == 0 || isNaN(num)) {
+                var sair = confirm("Confirmar Saída?") //caixa de confirmação
+
+                if (sair) { //se sair for verdadeiro(confirmado)
+                    break //sai da repetição
+
+                }   else {
+                        continue //volta ao inicio do laço
+                    }
+            }
+
+            if(num % 2 == 0) {
+                alert(`O dobro de ${num} é ${num * 2}`)
+
+            } else {
+                alert(`O triplo de ${num} é ${num * 3}`)
+            }
+
+        } while (true)
+
+        alert("Bye, bye...")
+    </script>
+
+</body>
+</html>
