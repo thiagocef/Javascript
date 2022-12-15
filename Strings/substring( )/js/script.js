@@ -1,4 +1,4 @@
-let palavra = 'Cordeiro'
+let palavra = 'Marilucia'
 let ultima = palavra.length -1 //última letra
 
 console.log(palavra.substring(3)) //puxa a partir da terceira letra
