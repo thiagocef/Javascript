@@ -24,7 +24,7 @@ function validarSenha() {
         else if(num == null) {
             outCheck.innerHTML = '[ERRO] A senha deve ter entre 8 e 15 caracteres, no mínimo 1 número!!'
         } 
-            //verificar se contém letra minúscula (se for FALSO)
+            //verificar se contém letra minúscula (se for FALSO/null)
             else if (!minu) {
                 outCheck.innerHTML = '[ERRO] A senha deve ter entre 8 e 15 caracteres, no mínimo 1 número, 1 letra minúscula!!'
             }
@@ -36,7 +36,7 @@ function validarSenha() {
                     else if (simb == null) {
                         outCheck.innerHTML = '[ERRO] A senha deve ter entre 8 e 15 caracteres, no mínimo 1 número, 1 letra minúscula, pelo menos 2 letras maiúsculas e pelo menos 1 símbolo!!'
                     }
-                        //se a senha atende a todos os requisitos
+                        //se a senha atender a todos os requisitos...
                         else {
                             outCheck.innerHTML = 'OK! Senha Válida'
                         } 
