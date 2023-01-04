@@ -21,11 +21,6 @@ function criptografarMsg() {
     saida += impar + par
     
     outMensagem.innerHTML = saida
-    
-    // console.log(`Mensagem: ${mensagem}`)
-    // console.log(`Ímpares: ${impar}`)
-    // console.log(`Pares: ${par}`)
-    // console.log(`Saída: ${saida}`)
 }
 
 document.querySelector('.btnCriptografar').addEventListener('click', criptografarMsg)
