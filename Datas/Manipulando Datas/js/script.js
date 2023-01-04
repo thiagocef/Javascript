@@ -32,4 +32,14 @@ const dataBr = new Date()
 console.log('------------------------------')
 console.log("Data no formato do idioma local: ", dataBr.toLocaleDateString())
 
-console.log(dataBr.getMonth() + 1)
+console.log("Mês: ", dataBr.getMonth() + 1)
+console.log('------------------------------')
+console.log('Partes da data')
+
+let partes = dataBr.toLocaleDateString().split("/")
+console.log(partes) //array
+
+let dd = partes[0],
+    mm = partes[1],
+    yyyy = partes[2]
+console.log(dd, mm, yyyy)
