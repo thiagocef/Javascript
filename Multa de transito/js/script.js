@@ -1,50 +1,71 @@
 const inData = document.querySelector('.inData'),
-      inValor = document.querySelector('.inValor')
+      inValor = document.querySelector('.inValor'),
+      outData = document.querySelector('.outData'),
+      outDesconto = document.querySelector('.outDesconto')
+      
+function calcularDesconto() {
+      const valorMulta = Number(inValor.value),
+            desconto = valorMulta - (valorMulta * 0.20)
 
-function calcularValor() {
+      //recebe a data do input e divide em partes
       const dataInfracao = inData.value,
-            valorMulta = Number(inValor.value) //195.23
+            partesDataInfracao = dataInfracao.split("-")
 
-      const desconto = 0.20,
-            prazo = 90,
-            totalDesconto = valorMulta * desconto //156.18
-    
-      //*******************************/
-      //manipulando as datas
+      //irá manipular a data de entrada
+      const date = new Date(),
+            hoje = new Date()
+      
+      // console.log(`Data da Infração: ${dataInfracao}`)
+      // console.log(partesDataInfracao)
 
-      console.log(dataInfracao)
-      const partes = dataInfracao.split("-")
-      console.log(partes)
+      //seta cada parte da data no objeto date
+      date.setDate(Number(partesDataInfracao[2]))
+      date.setMonth(Number(partesDataInfracao[1]))
+      date.setFullYear(Number(partesDataInfracao[0]))
+      
+      //recebe cada parte do objeto date
+      let dia = date.getDate(),
+          mes = date.getMonth(),
+          ano = date.getFullYear(),
+          prazoDesconto = mes + 3
 
-      let data = new Date(),
-          dia = Number(partes[2]),
-          mes = Number(partes[1]),
-          ano = Number(partes[0]),
-          dataBr = data.toLocaleDateString()
+      // console.log(`Data Formatada: ${dia}/${mes}/${ano}`)
 
+      if (prazoDesconto === 13) {
+            mes = 1
+            ano += 1
+            outData.innerHTML = `Data Limite para Pagamento com Desconto: ${dia}/${mes}/${ano}`
+            outDesconto.innerHTML = `Valor com Desconto R$: ${desconto.toFixed(2)}`
 
-      if((dia + prazo) > 28 || mes === 2) {
-            mes += 1 //adiciona 1 ao mes, caso seja fevereiro
+            // console.log(`Data Limite para Pagamento com Desconto: ${dia}/${mes}/${ano}`)
+      } 
+
+      else if(prazoDesconto === 14) {
+            mes = 2
+            ano += 1
+            outData.innerHTML = `Data Limite para Pagamento com Desconto: ${dia}/${mes}/${ano}`
+            outDesconto.innerHTML = `Valor com Desconto R$: ${desconto.toFixed(2)}`
+
+            // console.log(`Data Limite para Pagamento com Desconto: ${dia}/${mes}/${ano}`)
+      } 
+
+      else if(prazoDesconto === 15) {
+            mes = 3
+            ano += 1
+            outData.innerHTML = `Data Limite para Pagamento com Desconto: ${dia}/${mes}/${ano}`
+            outDesconto.innerHTML = `Valor com Desconto R$: ${desconto.toFixed(2)}`
+
+            // console.log(`Data Limite para Pagamento com Desconto: ${dia}/${mes}/${ano}`)
+      } 
+
+      else {
+            mes += 3
+            outData.innerHTML = `Data Limite para Pagamento com Desconto: ${dia}/${mes}/${ano}`
+            outDesconto.innerHTML = `Valor com Desconto R$: ${desconto.toFixed(2)}`
+
+            // console.log(`Data Limite para Pagamento com Desconto: ${dia}/${prazoDesconto}/${ano}`)
       }
-
-
-
-
-
-
-
-
-      //testes de saída
-      // console.log(`Data da Infração: ${data}`)
-      console.log("Dia:", dia)
-      console.log("Mês:", mes)
-      console.log("Ano:", ano)
-      console.log(`Data limite para desconto: ${dia + prazo}`)
-      console.log("Data formato BR:", dataBr)
-      // console.log(`Data limite para desconto: ${Math.round((dia + prazo)) / 86400000}`)
-      // console.log(`Multa com desconto: ${(valorMulta - totalDesconto).toFixed(2)}`)
-
-
 }
+      
 
-document.querySelector('.btnCalcular').addEventListener('click', calcularValor)
+document.querySelector('.btnCalcular').addEventListener('click', calcularDesconto)
