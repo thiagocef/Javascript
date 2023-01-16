@@ -26,7 +26,7 @@ function calcularPreco() {
     if(anoModelo === anoAtual) {
         outClassificacao.innerHTML = `Classificação: ${modelo} - Novo`
 
-        venda = (precoProprietario * 0.80) + precoProprietario
+        venda = (precoProprietario * 0.08) + precoProprietario
         outPrecoVenda.innerHTML = `Preço de Venda R$: ${venda.toFixed(2)}`
 
         return venda
