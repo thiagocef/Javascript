@@ -4,49 +4,44 @@ const inModeloVeiculo = document.querySelector('.inModeloVeiculo'),
       outClassificacao = document.querySelector('.outClassificacao'),
       outPrecoVenda = document.querySelector('.outPrecoVenda')
       
-function calcularPreco() {
-      
-    //modelo do veículo
-    const modelo = inModeloVeiculo.value
+function mostrarDados() { 
+    const modelo = inModeloVeiculo.value,
+          ano = Number(inAnoFabricacao.value),
+          preco = Number(inPrecoProprietario.value)
 
-    //data atual
-    const hoje = new Date(),
-          anoAtual = hoje.getFullYear() //ano atual
-    
-    //ano do veículo
-    const anoFabricacao = inAnoFabricacao.value,
-          partesAno = anoFabricacao.split("-"), //ano dividido em partes
-          anoModelo = Number(partesAno[0]) 
+    //após o preenchimento dos campos, as seguintes funções são chamadas:
+    //o retorno de cada função é atribuído às variáveis
+    const classificacao = classificarVeiculo(ano), //passando "ano(ano)" como parâmetro
+          precoVenda = calcularVenda(preco, classificacao) //passando "preco(valor)" e "classificacao(status)" como parâmetros
 
-    //preço pedido pelo proprietário
-    const precoProprietario = Number(inPrecoProprietario.value)
+    //exibe as respostas
+    outClassificacao.innerHTML = `Classificação: ${modelo} - ${classificacao}`
 
-    let venda = 0
+    outPrecoVenda.innerHTML = `Preço de Venda R$: ${precoVenda.toFixed(2)}`
+}
+document.querySelector('.btnCalcular').addEventListener('click', mostrarDados)
 
-    if(anoModelo === anoAtual) {
-        outClassificacao.innerHTML = `Classificação: ${modelo} - Novo`
+//recebe o ano como parâmetro
+function classificarVeiculo(ano) {
+    const anoAtual = new Date().getFullYear() //obtem o ano atual
+    let classif
 
-        venda = (precoProprietario * 0.08) + precoProprietario
-        outPrecoVenda.innerHTML = `Preço de Venda R$: ${venda.toFixed(2)}`
-
-        return venda
-    
-    } else if(anoModelo < anoAtual - 2) {
-        outClassificacao.innerHTML = `Classificação: ${modelo} - Usado`
-
-        venda = (precoProprietario * 0.10) + precoProprietario
-        outPrecoVenda.innerHTML = `Preço de Venda R$: ${venda.toFixed(2)}`
-
-        return venda
-
+    if (ano === anoAtual) {
+        classif = `Novo`
+    } else if (ano === anoAtual -1 || ano === anoAtual -2) {
+        classif = `Seminovo`
     } else {
-        outClassificacao.innerHTML = `Classificação: ${modelo} - Seminovo`
-
-        venda = (precoProprietario * 0.10) + precoProprietario
-        outPrecoVenda.innerHTML = `Preço de Venda R$: ${venda.toFixed(2)}`
-
-        return venda
+        classif = `Usado`
     }
+
+    return classif //esse retorno será enviado para a função principal
+                   //onde foi atriuído à variável "classificacao"
 }
 
-document.querySelector('.btnCalcular').addEventListener('click', calcularPreco)
+
+function calcularVenda(valor, status) {
+    //if ternário
+    let prVenda = (status === `Novo`) ? valor * 1.08 : valor * 1.10
+
+    return prVenda
+}
