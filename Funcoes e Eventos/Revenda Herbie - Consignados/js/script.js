@@ -34,11 +34,11 @@ function classificarVeiculo(ano) {
         classif = `Usado`
     }
 
-    return classif //esse retorno será enviado para a função principal
+    return classif //o return será enviado para a função principal
                    //onde foi atriuído à variável "classificacao"
 }
 
-
+//recebe o valor e o status como parâmetros
 function calcularVenda(valor, status) {
     //if ternário
     let prVenda = (status === `Novo`) ? valor * 1.08 : valor * 1.10
