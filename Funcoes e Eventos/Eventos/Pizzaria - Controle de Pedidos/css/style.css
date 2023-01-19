@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+.oculta {
+    display: none;
+}
+
+.exibe {
+    display: inline-flex;
+}

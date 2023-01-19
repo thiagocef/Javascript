@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzaria - Controle de Pedidos</title>
+
+    <link rel="stylesheet" href="/Funcoes e Eventos/Eventos/Pizzaria - Controle de Pedidos/css/style.css">
+</head>
+<body>
+    <h1>Pizzaria - Controle de Pedidos</h1>
+
+    <p>
+        Item do Pedido:
+        
+        <input type="radio" name="produto" id="rbPizza" class="rbPizza" checked autofocus> Pizza
+
+        <input type="radio" name="produto" id="rbBedida" class="rbBedida"> Bebida
+
+    </p>
+        
+    <p>
+        <span>Item:</span>
+        
+        <select class="inPizza exibe">
+            <option value="media">Pizza Média</option>
+            <option value="grande">Pizza Grande</option>
+            <option value="familia">Pizza Família</option>
+        </select>
+
+        <select class="inBebida oculta">
+            <option value="refri">Refrigerante Litro</option>
+            <option value="suco">Jarra de Suco</option>
+            <option value="agua">Água Mineral</option>
+        </select>
+    </p>
+
+    <p>
+        Detalhes do Item:
+
+        <input type="text" class="inDetalhes detalhes">
+
+        <input type="button" value="Adicionar" class="btnAdicionar">
+    </p>
+
+    <p class="outPedido"></p>
+
+    <script src="/Funcoes e Eventos/Eventos/Pizzaria - Controle de Pedidos/js/script.js"></script>
+</body>
+</html>
