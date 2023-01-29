@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salvar e Recuperar dados</title>
+</head>
+<body>
+    <h1>Salvar e Recuperar dados</h1>
+    <pre>*Os dados são salvos como STRINGS</pre>
+    <pre>*Utilizar a function Number() para converter para número</pre>
+
+    <h2>Salvar - setItem()</h2>
+
+    <h3>Este Método contém dois parâmetros:</h3>
+    <ul>
+        <li><strong>Chave:</strong> nome da variável</li>
+        <li><strong>Valor:</strong> conteúdo da variável</li>
+    </ul>
+    
+    <h3>Exemplo:</h3>
+    <p>localStorage("idade", 17)</p>
+
+    <hr>
+    <h2>Recuperar - getItem()</h2>
+
+    <h3>Este Método contém um parâmetro:</h3>
+    <ul>
+        <li><strong>Chave:</strong> nome da variável</li>
+    </ul>
+    <h3>E uma variável para receber o valor</h3>
+
+    <h3>Exemplo:</h3>
+    <p><strong>let idade</strong> = localStorage.getItem("idade")</p>
+
+    <h4>Convertendo para número:</h4>
+    <p><strong>let idade</strong> = Number(localStorage.getItem("idade"))</p>
+    
+
+    <script src="/Persistencia de dados - localStorage/script.js"></script>
+</body>
+</html>
