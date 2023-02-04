@@ -4,20 +4,21 @@ const inPizza = document.querySelector('.inPizza'),
       inBebida = document.querySelector('.inBebida')
 
       
-      function trocarItem() {
+function trocarItem() {
     //se o pedido pizza for marcado
     if (rbPizza.checked) {
-        inPizza.classList.add('exibe')
-        inBebida.classList.replace('exibe', 'oculta')
+        inBebida.classList = 'oculta'
+        inPizza.classList = 'exibe'
     } else {
-        inBebida.classList.add('oculta', 'exibe')
-        inPizza.classList.replace('exibe', 'oculta')
+        inPizza.classList = 'oculta'
+        inBebida.classList = 'exibe'
     }
 }
 
 //referencia aos botões radios e associa função ao evento change
 let rbPizza = document.querySelector('.rbPizza'),
     rbBedida = document.querySelector('.rbBedida')
+
 rbPizza.addEventListener('change', trocarItem)
 rbBedida.addEventListener('change', trocarItem)
 
@@ -36,6 +37,7 @@ function mostrarNumSabores() {
         inDetalhes.placeholder = `Até ${num} sabores`
     }
 }
+
 //chama a função sempre que o campo detalhes do pedido receber o foco
 let inDetalhes = document.querySelector('.inDetalhes')
 inDetalhes.addEventListener('focus', mostrarNumSabores)
@@ -56,13 +58,13 @@ inDetalhes.addEventListener('keypress', function(tecla) {
 
 //função para adicionar os items do pedido
 function adicionarItem() {
-    const inPizza = document.querySelector('.inPizza'),
+    let inPizza = document.querySelector('.inPizza'),
           inBebida = document.querySelector('.inBebida'),
           outPedido = document.querySelector('.outPedido')
 
     if (rbPizza.checked) {
         let num = inPizza.selectedIndex //obtem o numero do item selecionado
-        var produto = inPizza.options[num].text //recebe o texto do item selecionado
+        var produto = inPizza.options[num].text //obtem o texto do item selecionado
     
     } else {
         let num = inBebida.selectedIndex

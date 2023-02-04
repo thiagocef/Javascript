@@ -1,0 +1,8 @@
+function limparCampos() {
+    rbPizza.checked = true //selecioa pizza
+    inBebida.classList = 'oculta' //oculta o select(itens) de bebidas
+    inPizza.classList = 'exibe' //exibe o select(itens) de pizzas
+    inPizza.selectedIndex = 0 //seleciona o primeiro item(posição 0)
+    inDetalhes.value = '' //limpa o campo detalhes
+    rbPizza.focus() //joga o foco no rbPizza
+}
