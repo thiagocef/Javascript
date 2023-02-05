@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veterinária Avenida</title>
+
+    <link rel="stylesheet" href="/Funcoes e Eventos/Programa Veterinaria Avenida/css/style.css">
+
+</head>
+<body>
+    <h1>Veterinária Avenida</h1>
+
+    <p>
+        Valor da Vacina:
+        <input type="text" class="inValor">
+    </p>
+
+    <p>
+        Possui Convênio:
+        <input type="radio" name="convenio" class="rdSim"> Sim 
+        <input type="radio" name="convenio" checked class="rdNao" > Não 
+    </p>
+
+    <p>
+        <select name="convenio" class="selConvenio ocultar">
+            <option value="amigo">Amigo dos Animais</option>
+            <option value="saude">Saúde Mental</option>
+        </select>
+    </p>
+
+    <p>
+        <input type="button" value="Calcular Desconto" class="btnCalcular">
+        <h4 class="outDesconto">Desconto R$: </h4>
+        <h4 class="outPagar">A pagar R$: </h4>
+    </p>
+
+    <script src="/Funcoes e Eventos/Programa Veterinaria Avenida/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+.ocultar {
+    display: none;
+}
+
+.exibir {
+    display: inline-block;
+}
+
