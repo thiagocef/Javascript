@@ -1,0 +1,6 @@
+
+    // console.log('Nome Completo: ', nome)
+    // console.log('Sobrenome: ', sobrenome)
+    // console.log('Nome: ', nomeCompleto)
+    // console.log('Número de vogais: ', numVogais)
+    // console.log(`Senha inicial: `, senhaInicial)
