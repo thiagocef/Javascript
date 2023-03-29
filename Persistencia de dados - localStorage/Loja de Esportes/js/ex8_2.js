@@ -2,9 +2,9 @@
 let inputsRadio = document.getElementsByTagName('input')
 const clubes = ['Brasil', 'Pelotas', 'Farroupilha']
 
-//percorre todos os inputse associa o evento change a cada um
+//percorre todos os inputs e associa o evento change a cada um
 for(let i = 0; i < inputsRadio.length; i++) {
-    inputsRadio[i].addEventListener('change', trocarClube)
+    inputsRadio[i].addEventListener('change', trocarClube) //chama a função trocar clube
 }
 
 function trocarClube() {
@@ -16,7 +16,7 @@ function trocarClube() {
     //percorre os button radio para verificar qual foi selecionado
     for(let i = 0; i < 4; i++) {
         if(inputsRadio[i].checked) { //se selecionado
-            selecao = i          //armazena o índice do radio selecionado
+            selecao = i              //armazena o índice do radio selecionado
             break                    //e sai da repetição
         }
     }
